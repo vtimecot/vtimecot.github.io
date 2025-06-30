@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="./static/images/icon.png">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning">
+  <meta name="keywords" content="Hand, 3D, Reconstruction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      .video-container {
+          display: flex;  /* Use flexbox to align videos side by side */
+          justify-content: center;
+          gap: 20px;  /* Space between the videos */
+      }
+
+      
+
+      /* Make sure the videos are responsive on smaller screens */
+      @media (max-width: 900px) {
+          .video-container {
+              flex-direction: column;  /* Stack videos vertically on smaller screens */
+              align-items: center;
+          }
+
+          video {
+              width: 100%;  /* Make the videos take full width on smaller screens */
+              max-width: 500px;  /* Limit the width on smaller screens */
+          }
+      }
+  </style>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">VTimeCoT: Thinking by Drawing for Video Temporal Grounding and Reasoning</h1>          
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="">Jinglei Zhang</a>*<sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=FqNrU2QAAAAJ">Yuanfan Guo</a>*<sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rolpotamias.github.io/">Rolandos Alexandros Potamias</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://jiankangdeng.github.io/">Jiankang Deng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xuhangcn.github.io/">Hang Xu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=syoPhv8AAAAJ&hl=en">Chao Ma</a>&dagger;<sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University</span>&nbsp;
+            <span class="author-block"><sup>2</sup>Noah's Ark Lab</span>&nbsp;
+            <span class="author-block"><sup>3</sup>Imperial College London</span>
+          </div>
+          <br>
+          <span class="author-block">
+            <h1 class="title is-size-4  publication-venue"></h1>
+          </span>
+          <br>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming soon)</span>
+                  </a>
+              </span>
+             
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.png" alt="teaser" class="center">
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In recent years, video question answering based on multimodal large language models (MLLM) has garnered considerable attention, due to the benefits from the substantial advancements in LLMs. However, these models have a notable deficiency in the domains of video temporal grounding and reasoning, posing challenges to the development of effective real-world video understanding systems. Inspired by how humans use video players to interact with the progress bar for video comprehension, we introduce VTimeCoT, a simple yet effective training-free framework, designed for high-performance video grounding and reasoning. The proposed framework incorporates two novel visual tools of the progress bar: a plug-and-play progress bar integration tool and a high-efficiency highlighting tool. In addition, to address the limitations of conventional text-based chain-of-thought (CoT) approaches, we introduce a visuotemporal CoT process that integrates cross-modality reasoning across both video and text. Our approach demonstrates significant performance improvements on both Qwen2VL-7B and GPT4o baselines in tasks of video temporal grounding and reasoning-based question answering. Finally, we showcase that the proposed framework achieves a compositional and interpretable reasoning process.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+    <!-- Method overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+        <p>
+          We propose \( \textbf{VTimeCoT} \), a \( \textbf{V} \)isual \( \textbf{Time} \) \( \textbf{C} \)hain-\( \textbf{o} \)f-\( \textbf{T} \)hought framework for video temporal grounding and reasoning. VTimeCoT constructs cross-modality reasoning across both video and text, which enables the MLLM to utilize progress bar tools to annotate the time progression and highlight the key relevant segments to answer complex temporal questions. 
+        </p>
+        <div>
+            <img src="./static/images/vtimecot_method.png" alt="method" class="center">
+        </div>
+        <p>
+          On the left, we demonstrate how the framework iteratively generates thoughts and actions, which dynamically updates the video memory with an overlaid progress bar for reasoning. On the right, we illustrate two novel tools that integrate the frame-sync visual progress bar and highlight key moments.  
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+  <!-- Method overview. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Qualitative results</h2>
+      <div class="content has-text-justified">
+      <p>
+        Through reasoning that integrates the progress bar and highlights, VTimeCoT accurately answers questions related to temporal counting and order, which GPT-4o falls short.
+      </p>
+      <div>
+          <img src="./static/images/vtimecot_result.png" alt="method" class="center">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>  
+  
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{
+    }
+</code></pre>
+  </div>
+</section>
+<!-- 
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    S. Zafeiriou was supported by EPSRC Project DEFORM (EP/S010203/1) and GNOMON (EP/X011364). R.A. Potamias was supported
+by EPSRC Project GNOMON (EP/X011364).
+  </div>
+</section> -->
+
+<footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The source code of this website is borrowed from <a
+                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
